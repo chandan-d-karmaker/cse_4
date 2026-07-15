@@ -1,0 +1,27 @@
+.header{
+    font-size: 96px;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(to right, #d2c0bc, #523a27);
+}
+
+.btn {
+    background-color: #4CAF50;
+    text-decoration: none;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 24px;
+    gap: 24px;
+}
