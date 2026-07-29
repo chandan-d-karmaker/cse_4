@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <h2>Interactive Menu</h2>
+      <!-- Accordion Section 1 -->
+      <input type="radio" name="accordion" id="tab1" checked hidden />
+      <div class="tab">
+        <label for="tab1" class="tab-title">Item 1: Profile</label>
+        <div class="tab-content">
+          <p>This section expands when active using CSS radio buttons.</p>
+        </div>
+      </div>
+      <!-- Accordion Section 2 -->
+      <input type="radio" name="accordion" id="tab2" hidden />
+      <div class="tab">
+        <label for="tab2" class="tab-title">Item 2: Feedback</label>
+        <div class="tab-content">
+          <p>Rate this widget:</p>
+          <!-- Interactive Star Rating Widget -->
+          <div class="rating">
+            <input type="radio" name="star" id="star5" hidden /><label
+              for="star5"
+              >★</label
+            >
+            <input type="radio" name="star" id="star4" hidden /><label
+              for="star4"
+              >★</label
+            >
+            <input type="radio" name="star" id="star3" hidden /><label
+              for="star3"
+              >★</label
+            >
+            <input type="radio" name="star" id="star2" hidden /><label
+              for="star2"
+              >★</label
+            >
+            <input type="radio" name="star" id="star1" hidden /><label
+              for="star1"
+              >★</label
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Accordion Section 3 -->
+      <input type="radio" name="accordion" id="tab3" hidden />
+      <div class="tab">
+        <label for="tab3" class="tab-title">Item 3: Settings</label>
+        <div class="tab-content">
+          <p>Zero JavaScript required for all interactions!</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
