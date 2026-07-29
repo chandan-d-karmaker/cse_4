@@ -44,7 +44,8 @@ body {
 #tab3:checked + .tab .tab-title {
   background: #3b82f6;
   color: white;
-} /* Star Rating Styling (Reversed flex order for hover-up effects) */
+} 
+/* Star Rating Styling (Reversed flex order for hover-up effects) */
 .rating {
   display: flex;
   flex-direction: row-reverse;
