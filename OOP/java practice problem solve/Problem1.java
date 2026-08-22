@@ -5,11 +5,11 @@ class Student {
 
 public class Problem1 {
     public static void main(String[] args) {
-        Student student = new Student();
-        student.name = "Alice";
-        student.id = 101;
+        Student s1 = new Student();
+        s1.name = "Maishya";
+        s1.id = 101;
         
-        System.out.println("Student ID: " + student.id);
-        System.out.println("Student Name: " + student.name);
+        System.out.println("Student ID: " + s1.id);
+        System.out.println("Student Name: " + s1.name);
     }
 }

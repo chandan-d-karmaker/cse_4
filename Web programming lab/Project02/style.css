@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-wrapper {
+  background-color: #ffffff;
+  color: #333333;
+  min-height: 100vh;
+  padding: 3rem;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
+}
+
+
+#theme-toggle {
+  display: none;
+}
+
+
+#theme-toggle:checked ~ .page-wrapper {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+#theme-toggle:checked ~ .page-wrapper nav {
+  border-bottom-color: #444;
+}
+
+
+.toggle-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.toggle-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+
+.grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 280px;
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+#theme-toggle:checked ~ .page-wrapper .card {
+  border-color: #333;
+  background-color: #242424;
+}
+
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px #00000001;
+}
+
+#theme-toggle:checked ~ .page-wrapper .card:hover {
+  box-shadow: 0 10px 20px #00000005;
+}
+
+.hidden-text {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #666;
+  transition: all 0.4s ease-out;
+}
+
+#theme-toggle:checked ~ .page-wrapper .hidden-text {
+  color: #aaa;
+}
+
+.card:hover .hidden-text {
+  max-height: 80px;
+  opacity: 1;
+  margin-top: 1rem;
+}
