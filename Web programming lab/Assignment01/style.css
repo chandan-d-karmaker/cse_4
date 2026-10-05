@@ -1,0 +1,129 @@
+    /* ---------- 1. BASE STYLES (Layout & Box Model) ---------- */
+
+    /* Make sure padding and borders don't make boxes bigger than expected */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #e8f7f6;               /* soft teal background */
+      font-family: Verdana, Arial, sans-serif; /* clean font */
+      color: #234;                             /* dark text */
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Main wrapper: limited width and centered on the screen */
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ---------- 2. TYPOGRAPHY & COLORS ---------- */
+
+    h1 {
+      color: #0e7c75;   /* dark teal */
+      font-size: 2.2rem;
+      margin: 0 0 8px 0;
+    }
+
+    h2 {
+      color: #e12885;   /* Miku-style pink */
+      margin-top: 0;
+    }
+
+    /* Remove the default underline from every link */
+    a {
+      text-decoration: none;
+      color: #0e7c75;
+    }
+
+    /* ---------- 3. CARD CONTAINERS ---------- */
+    /* Every main section shares this "card" look */
+
+    .card {
+      background-color: #ffffff;
+      border: 2px solid #39c5bb;   /* teal border */
+      border-radius: 12px;         /* rounded corners */
+      padding: 20px;
+      margin-bottom: 20px;         /* space between cards */
+    }
+
+    .card h1{
+        text-align: center;
+    }
+
+    /* ---------- 4. NAVIGATION (Bonus: Flexbox) ---------- */
+
+    nav ul {
+      display: flex;                     /* put the links in a row */
+      justify-content: space-between;    /* spread them across the bar */
+      list-style: none;                  /* remove bullet points */
+      margin: 16px 0 0 0;
+      padding: 0;
+      gap: 8px;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background-color: #d3f3f0;
+      font-weight: bold;
+    }
+
+    /* ---------- 5. INTERACTIVITY (:hover) ---------- */
+
+    nav a:hover {
+      background-color: #e12885;   /* turns pink when you point at it */
+      color: #ffffff;
+    }
+
+    /* ---------- 6. IMAGE (Bonus: Responsive) ---------- */
+
+    img {
+      max-width: 100%;   /* never wider than its container */
+      height: auto;      /* keeps the correct proportions */
+      display: block;
+      margin: 16px auto 0 auto;
+      border-radius: 12px;
+    }
+
+    /* ---------- 7. LIST & TABLE ---------- */
+
+    ul.interests li {
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;   /* single lines between cells */
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #39c5bb;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #39c5bb;
+      color: #ffffff;
+    }
+
+    /* ---------- 8. FOOTER ---------- */
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 10px;
+    }
+
+    /* On small screens, let the nav links wrap onto a new line */
+    @media (max-width: 500px) {
+      nav ul {
+        flex-wrap: wrap;
+      }
+    }
