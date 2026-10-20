@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef2f3;
+}
+.login-card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.input-group {
+  position: relative;
+}
+input {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 15px 0;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  position: absolute;
+  right: 4px;
+  top: 18px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  background-color: #6c5ce7;
+  color: white;
+  border-radius: 4px;
+}

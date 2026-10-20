@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #222222;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+.card {
+  text-align: center;
+  padding: 30px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+}
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}

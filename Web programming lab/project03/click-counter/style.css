@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
+}
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 3rem;
+  margin: 15px 0;
+  color: #333;
+}
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+}
+button:last-child {
+  background-color: #dc3545;
+}
