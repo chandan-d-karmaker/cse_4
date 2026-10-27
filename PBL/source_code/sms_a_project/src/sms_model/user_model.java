@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sms_model;
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 import java.sql.*;
 
 /**
@@ -21,7 +21,7 @@ public class user_model {
             Connection con=DriverManager.getConnection(url, user, pass1);
             Statement st=con.createStatement();
             st.execute("insert into sms_a.user_data value(1003,\"1234\",\""+name+"\",\"Student\");");
-            Resultset rs=st.executeQuery("seleet * for usgu")
+//            Resultset rs=st.executeQuery("seleet * for usgu")
 
             
             

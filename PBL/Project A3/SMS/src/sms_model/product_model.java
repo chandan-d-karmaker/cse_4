@@ -1,99 +1,63 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sms_model;
 
-/**
- *
- * @author Aditya
- */
-public class product_model {
-    
-    public static final int LOW_STOCK_LIMIT = 5;
- 
-    
-    private int id;
-    private String name;
-    private String category;
-    private double price;
-    private int stockQty;
- 
- 
-    public product_model() {
-    }
- 
+import java.math.BigDecimal;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-    public product_model(int id, String name, String category, double price, int stockQty) {
-        this.id = id;
-        this.name = name;
-        this.category = category;
-        this.price = price;
-        this.stockQty = stockQty;
-    }
- 
-    
-    public product_model(String name, String category, double price, int stockQty) {
-        this.name = name;
-        this.category = category;
-        this.price = price;
-        this.stockQty = stockQty;
-    }
- 
-   
-    public int getId() {
-        return id;
-    }
- 
-    public void setId(int id) {
-        this.id = id;
-    }
- 
-    public String getName() {
-        return name;
-    }
- 
-    public void setName(String name) {
-        this.name = name;
-    }
- 
-    public String getCategory() {
-        return category;
-    }
- 
-    public void setCategory(String category) {
-        this.category = category;
-    }
- 
-    public double getPrice() {
-        return price;
-    }
- 
-    public void setPrice(double price) {
-        this.price = price;
-    }
- 
-    public int getStockQty() {
-        return stockQty;
-    }
- 
-    public void setStockQty(int stockQty) {
-        this.stockQty = stockQty;
-    }
- 
-    
-    public void reduceStock(int qty) {
-        if (qty <= 0) {
-            System.out.println("Quantity must be more than 0.");
+/** All SQL for the products table. */
+public class product_model {
+
+    public void insert_product(String name, String category, BigDecimal price, int stock) throws SQLException {
+        String sql = "INSERT INTO products(name,category,price,stock_qty) VALUES(?,?,?,?)";
+        try (Connection con = db_connection.get();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, name);
+            ps.setString(2, category);
+            ps.setBigDecimal(3, price);
+            ps.setInt(4, stock);
+            ps.executeUpdate();
         }
-        if (qty > stockQty) {
-            System.out.println("Not enough stock for " + name + ".");
-        }
-        stockQty = stockQty - qty;
     }
- 
- 
-    public boolean isLowStock() {
-        return stockQty <= LOW_STOCK_LIMIT;
+
+    public void update_product(int id, String name, String category, BigDecimal price, int stock) throws SQLException {
+        String sql = "UPDATE products SET name=?, category=?, price=?, stock_qty=? WHERE id=?";
+        try (Connection con = db_connection.get();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, name);
+            ps.setString(2, category);
+            ps.setBigDecimal(3, price);
+            ps.setInt(4, stock);
+            ps.setInt(5, id);
+            ps.executeUpdate();
+        }
+    }
+
+    public void delete_product(int id) throws SQLException {
+        try (Connection con = db_connection.get();
+             PreparedStatement ps = con.prepareStatement("DELETE FROM products WHERE id=?")) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+    }
+
+    /** Rows of {id, name, category, price, stock}. Empty keyword = everything. */
+    public List<Object[]> get_all_products(String keyword) throws SQLException {
+        List<Object[]> list = new ArrayList<>();
+        String sql = "SELECT id,name,category,price,stock_qty FROM products "
+                   + "WHERE name LIKE ? OR category LIKE ? ORDER BY name";
+        try (Connection con = db_connection.get();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            String like = "%" + keyword + "%";
+            ps.setString(1, like);
+            ps.setString(2, like);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    list.add(new Object[]{rs.getInt(1), rs.getString(2), rs.getString(3),
+                                          rs.getBigDecimal(4), rs.getInt(5)});
+                }
+            }
+        }
+        return list;
     }
 }

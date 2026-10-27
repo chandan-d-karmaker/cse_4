@@ -4,7 +4,7 @@ class Student {
 }
 
 public class main {
-    public static void main(String[] args) {
+    public main(String[] args) {
         Student s1 = new Student();
         s1.id = 12511006;
         s1.name = "Chandan Karmaker";
